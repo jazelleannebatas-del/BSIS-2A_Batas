@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa Rita De Casia Dashboard</title>
+    <style>
+        /* General Reset and Font */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* --- Header/Navigation Bar --- */
+        .header-nav {
+            background-color: #d8c89c; /* A color to represent the logo's gold/brown */
+            color: white;
+            padding: 40px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            margin-left: 10px;
+            color: #fff;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        /* --- Hero Section (Main Image Area) --- */
+        .hero-section {
+            background: url('image1.jpg') center center/cover no-repeat; /* Replace with your actual image path or a solid color/gradient */
+            min-height: 450px; /* Adjust height as needed */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px 100px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Helps text stand out */
+            position: relative; /* For absolute positioning of overlay text */
+        }
+
+        /* A dark overlay for the image, similar to the original site */
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark transparency */
+            z-index: 1;
+        }
+        
+        /* Ensure content is above the overlay */
+        .hero-content {
+            z-index: 2;
+        }
+
+        .welcome-title {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .explore-button {
+            background-color: white;
+            color: #333;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 5px;
+            width: fit-content;
+            transition: background-color 0.3s;
+        }
+
+        .explore-button:hover {
+            background-color: #ddd;
+        }
+
+        /* --- Main Content Section (Below Hero) --- */
+        .main-content {
+            padding: 40px 100px;
+        }
+
+        .content-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1 1 calc(33% - 40px); /* 3 cards per row, accounting for gap */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav">
+        <div class="logo-section">
+            <span>✝️</span> 
+            <span class="logo-text">Santa Rita, Pampanga</span>
+            <span class="logo-text">- Rose Saint</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Log out</a>
+            <a href="request docs.html">Request document</a>
+            <a href="contact.html">Contact</a>
+            
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="welcome-title">Welcome to<br>Santa Rita De Casia Parish</h1>
+            <p class="tagline">Serving your spiritual and document needs with grace and simplicity.</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <h2 class="content-title">Welcome to Online Parish Document Processing System</h2>
+    
+
+
+        <p>Your secure and convenient path to Parish documents and requests. We are pleased to offer you this dedicated
+           platform for submitting and tracking your essential parish document requests, such as Baptismal Certificates,
+           Confirmation Records, Marriage Documents, and more.
+
+        This system is designed to provide you with efficient, secure, and transparent processing, allowing you to make requests from
+        the comfort of your home. We remain committed to serving your needs with the reverence  
+        and care of a community of faith.
+        </p>
+        <div class="Sacrament of the church">
+            <img src="image3.jpg">
+            <h3>Baptismal</h3>
+            
+        </div>
+        <hr>
+
+        
+    </main>
+
+</body>
+</html>
