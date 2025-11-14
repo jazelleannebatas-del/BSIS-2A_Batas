@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacramental Document Request Form</title>
+    <!-- Load Tailwind CSS for simple styling and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 bg-gray-100 font-sans">
+
+    <div id="request-container" class="w-full max-w-xl bg-white rounded-lg shadow-xl p-8">
+        <!-- Header Section (Simplified) -->
+        <header class="pb-6 border-b border-gray-200">
+            <h1 class="text-2xl font-bold text-gray-800 text-center">
+                Document Request Form
+            </h1>
+            <p class="text-sm text-gray-500 text-center mt-1">
+                Please fill out the details below for your official document request.
+            </p>
+        </header>
+
+        <!-- Document Request Form -->
+        <form id="document-form" class="pt-6 space-y-4">
+
+            <!-- Request Type -->
+            <div>
+                <label for="documentType" class="block text-sm font-medium text-gray-700">Document Type <span class="text-red-500">*</span></label>
+                <select id="documentType" name="documentType" required
+                    class="mt-1 block w-full pl-3 pr-10 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    <option value="" disabled selected>Select the document you need</option>
+                    <option value="Baptismal Certificate">Baptismal Certificate</option>
+                    <option value="Confirmation Certificate">Confirmation Certificate</option>
+                    <option value="Marriage Certificate">Marriage Certificate</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Full Name -->
+            <div>
+                <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name of Requester <span class="text-red-500">*</span></label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Full Name"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Contact Information Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="email@example.com"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="09xx-xxx-xxxx"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                </div>
+            </div>
+
+            <!-- Date of Sacrament / Event -->
+            <div>
+                <label for="sacramentDate" class="block text-sm font-medium text-gray-700">Date of Sacrament/Event <span class="text-red-500">*</span></label>
+                <input type="date" id="sacramentDate" name="sacramentDate" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Remarks/Purpose -->
+            <div>
+                <label for="remarks" class="block text-sm font-medium text-gray-700">Remarks / Purpose</label>
+                <textarea id="remarks" name="remarks" rows="2" placeholder="Purpose of the document (e.g., school requirement, marriage preparation)."
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 resize-none"></textarea>
+            </div>
+
+            <!-- Submission Button -->
+            <div class="pt-2">
+                <button type="submit"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                    Submit Request
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('document-form').addEventListener('submit', function(event) {
+            // Stop the form from submitting and reloading the page
+            event.preventDefault();
+
+            // Collect Form Data
+            const form = event.target;
+            const formData = {
+                documentType: form.documentType.value,
+                fullName: form.fullName.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                sacramentDate: form.sacramentDate.value,
+                remarks: form.remarks.value,
+            };
+
+            // In a real application, you would send 'formData' to your server here.
+            console.log('Document Request Data:', formData);
+
+            // Simple success message for a 'simple code' example
+            // NOTE: We use alert here for simplicity, but a custom modal is better practice.
+            alert('Request submitted! Check console for data. (In a real app, this would be a nice modal)');
+
+            // Clear the form
+            form.reset();
+        });
+    </script>
+</body>
+</html>
